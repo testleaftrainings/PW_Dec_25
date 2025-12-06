@@ -1,0 +1,172 @@
+📑 Agenda for day 01 - Introduction to JavaScript
+
+09:00 to 09:45 -> JS Introduction and History
+09:45 to 10:15 -> Primitives Data Types
+10:15 to 10:30 -> Break
+10:30 to 10:50 -> Breakout Session
+10:50 to 11:45 -> Variables
+11:45 to 12:00 -> Breakout Session
+12:00 to 12:45 -> Operators and Conditional statements(if, if-else)
+12:45 to 13:00 -> Breakout Session
+
+
+
+
+
+javascript --> interpreter programming language
+           --> light weight 
+           --> objectOriented (Prototype based)
+           --> node.js engine for execution outside the browser
+           --> js engine (browser specific)
+        Features:
+         -->supports both front end and backend dev (full stack development)
+           clientside and server side validation
+           Even driven architecture (event loop)
+           asynchronous programming
+           Single thread non blocking i/o
+
+js -->transpiled (AST -->abstract syntax tree)
+  parsing the code -->byte code exe -->binaries(0's and 1's)
+
+jit compiler
+  variables -->a,b
+   expressions--> *
+    
+Datatypes
+  -->type of information you store 
+  primitive and non primitive -->object specific array
+   number -> whole , decimal
+   string -> name,address
+   boolean -> true,false
+   undefined-> variable declared but no value assigned
+   var data ==> undefined
+
+   null -->intentionally to make the varible null (not using the value)
+   var data=null 
+
+   bigInt -->long numbers
+   symbol --> unique information -->accessed in the way of object type
+var tr=Symbol("id")
+
+
+   Number -->holds  data -->single , multiple digits, decimals
+
+   filename -->camelCase
+   variables -->camelCase -->isActive
+   class -->PascalCase  --> LoginPage
+
+run the code 
+ node fileName.js
+-----------------------
+ var -> 1995 to 2015 
+ ES 2015  
+ let const
+
+ difference- 
+ var let const
+
+ var 
+ 1. allows redeclaration of variables and also reassignement 
+   var username="user1"
+   var username="user2"
+
+ let 
+  doesnt allow to redeclare
+  allows to reassign the value
+
+  var -->allows redeclare and reassignement
+  let -->doesnot allows redeclare and allows reassignment
+  for both let and var -->reassign -->last value will be used in further steps
+            
+      
+                             -->existing data becomes unused
+
+
+
+
+
+ arithmentic
++
+-
+/  -->quotient
+*
+%  --> 1 (remainder)
+
+comparision of data  -> return type boolean
+<
+6<5 -> false
+>
+7>5 ->true
+>=
+3>=4
+<=
+==
+!=
+
+7>3 -> true
+5!=5-> false
+
+pre/post -> automatic only post incerment and decerment
+
+post incerment (++):
+
+let num=5
+for(let i=0;i<num;i++) 
+//old value + 1
+0+1=1
+1+1
+++  --> data +1
+
+post decerment (--)
+-- -->data-1
+
+logical - boolean
+
+&&-> AND , || ->OR 
+
+(5==5 && 6<5)
+(true && false) = false
+
+(5==5 || 6<5)
+(true || false)= true
+
+ternary operator -->? 
+
+
+
+ClassRoom 2:
+
+var num-> 45
+//re-assignment
+//re-declaration
+
+let empname -> "testing"
+//re-assignment
+//re-declaration
+
+const final=34
+//re-assignment
+//re-declaration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+classRoom: 1
+create file dataType.js
+browserVersion -> number
+browsername-> string
+isBrowserOpen -> boolean
+history -> null (typeof)
+print the value and typeof the variable
