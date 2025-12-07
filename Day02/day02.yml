@@ -1,0 +1,230 @@
+Agenda
+08:45 - 09:00 -> Recap
+09:00 - 09:50 -> Conditional statement
+09:50 - 10:00 -> Break
+10:00 - 10:45 -> Looping - for loop
+10:45 - 11:15 -> ClassRoom(15 mins)
+11:15 - 12:00 -> String
+12:00 - 12:20 -> ClassRoom(15mins)+Break(5mins) 
+12:20 - 01:00 -> String
+
+
+Operators:
+
+Conditional statement:
+
+if - condition
+===============
+-> 1 if condition
+if(5>0){ 
+//when condition is true then only if block will be execution
+}
+
+
+
+-> 2 if else condition
+
+if(5>7){
+// if condition will false
+}else{
+//it will go to else block
+}
+
+-> 3 if ->else if ->else 
+let age =18
+
+ if(age<18){ //false
+ console.log("no voter id")
+}else if(age>=18){ //true
+console.log("voter id")
+}else{
+console.log("default id")
+}
+
+if(){
+}else if(){
+}else if(){
+}else if(){
+}else if(){
+}else{
+}
+
+SwitchCase: 
+
+The switch statement is used to perform different actions based on different conditions,
+ as an alternative to multiple if...else if...else blocks.
+ Syntax:
+
+
+switch (expression) {
+  case value1:
+    // Code block
+    break;  // once condition satisfied end execution
+  case value2:
+    // Code block
+    break;
+  ...
+  default:
+    // Default code block
+}
+
+ex:
+key and value pair
+let browserName ="ie"
+
+switch(browserName){
+
+case "edge":
+console.log("edge browser")
+break
+
+case "chrome":
+console.log("chrome browser")
+break
+
+default:
+console.log("No browser")
+}
+
+//output: chrome browser
+
+
+Looping Statements:
+
+for Statement: The for loop in JavaScript is used to iterate over a range of values or to 
+repeat a block of code a certain number of times. It consists of three parts: 
+initialization, condition, and iteration expression. The loop continues as long as 
+the condition is true.
+
+
+Initialization – Executed once before the loop starts.
+
+Condition – Checked before every iteration; loop runs as long as it's true.
+
+Update – Executed after each loop iteration.
+
+Example:
+
+for(initialization;condition;iteration){
+
+}
+iteration:
+i++ -> post increment => i+1
+++i -> pre increment  => 1+i
+
+let num=10
+
+for(let i=0;i<=num;i++){
+console.log(i)
+}
+
+i=0;0<=10;0+1  => i=1
+i=1;1<=10;1+1  => i=2
+i=2;2<=10;2+1  => i=3
+.
+.
+.
+.
+.
+.
+.
+i=10;10<=10;10+1 =>i=11
+i=11;11<=10 -> false -> stop execution
+
+output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+ 
+         Jump Statements:
+
+break Statement: The break statement is used to exit a loop prematurely. When encountered inside a loop,
+ it immediately terminates the loop, and the control is transferred to the statement following the loop.
+
+ for (int i = 0; i < 10; i++) {
+  //0,1,2,3,4,5
+    if (i == 5) {
+        break; // Exits the loop when i is 5
+    }
+    // Code inside the loop
+}
+
+
+continue Statement: The continue statement is used to skip the rest of the code inside a loop for 
+the current iteration and move on to the next iteration.
+
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        continue; // Skips the rest of the code for i=5 and continues with the next iteration
+    }
+    // Code inside the loop
+}
+//0,1,2,3,4,6,7,8,9
+
+ClassRoom 1:
+mark =55
+if(mark>85)-> Grade  a
+else if(mark>60)-> Grade b
+else if(mark>50)-> Grade c
+else -> Grade d
+
+ClassRoom 2:
+Input -> 30
+print Odd number 0 to 30
+use for loop
+use if condition
+print Value
+
+
+
+
+String:
+
+* its collection of Characters
+declare 2 types
+
+Type 1:
+String Literal // store the value in String constant pool memory its part heap memory
+let name="Dilip" // 301
+let val="Dilip" //it will not assign to new memory
+
+Type 2:
+String Object // directly it store value inside heap memory 
+let comName= new String("Testleaf") //202
+let name1=new String("TestLeaf") //302
+
+Declaring a String:
+Single quotes -> '   '
+Double quotes ->"  "
+BackTicks ->  ` `
+
+let n1="Dilip @ 123"
+let n2='dilip'
+let n3=`dilip`
+
+Methods: 
+1.length -> find total number of characters
+index value -> start form 0
+console.log(n1.length) -> 5 ->0-4
+
+
+
+let empname="dilip"
+let targetChar='i'
+let count is 0
+for loop
+if(empname.charAt(i)==targetChar){
+count++
+}
+
+print of i is presented
