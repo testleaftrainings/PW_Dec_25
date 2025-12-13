@@ -1,0 +1,79 @@
+week2.day1
+
+Agenda:
+
+-> String
+-> Functions
+-> Break
+-> Playwright Introduction 
+-> Browser Launch
+-> Breakout
+
+
+Functions:
+1.Named Function or Regular Function
+2.Arrow Function
+3.Call-Back Function
+
+Named Function:
+A function is a reusable block of code
+
+function session(){
+console.log("name")
+}
+
+//call the function
+console.log(session("Playwright"))
+session()
+
+
+Arrow function:
+const variable =(input) => input
+syntax"
+arrow function ()=>
+
+const add=()=>{console.log("hi")}
+const data=(stName,stId)=>{ stName +" "+ stId}
+console.log(data("dinesh",89))
+
+
+
+
+
+
+
+
+Callback function:
+callback -> call one function to another function 
+agrs -> callback -> user define
+
+function a(name,b){ //function a("dilip",b)
+console.log(name)
+b(30) //b(30)
+}
+
+function b(age){
+console.log(age)
+}
+
+a("dilip",b)
+
+
+//to avoid the callback- hell -> Promise 
+
+-> resolve() -> when task succeeds -> fulfilled
+-> reject() -> when task fails -> rejected
+-> pending() -> initial state()
+
+
+-> .then() -> handel succeeds -> reslove
+-> .catch() -> handles error -> reject
+
+
+
+Playwright:
+FileName.spec.ts
+execute from Root folder
+
+npm init playwright@latest 
+choose typescript
