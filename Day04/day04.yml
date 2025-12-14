@@ -1,0 +1,157 @@
+Agenda
+week2.day2
+-> Page Fixture
+-> DOM Structure
+-> Break
+-> Css
+-> Breakout
+
+
+Page fixture:
+common line of code -> browser,context and page
+
+
+test("Page fixture",async({page})=>{
+
+await page.goto("")
+
+})
+
+
+
+
+DOM -->Document Object Model /developer /Html design -->
+find information elements
+
+-->root tag ...
+-->tags 
+-->link based
+-->paragragh 
+-->dropdown element
+
+--> tabular stucture -->icon -->end of the page
+Text -->linktext
+
+Ways to Open DOM:
+1. right click on the application and click on inspect
+2. press f12 or fn + f12
+3. press ctrl + shift + i => browser click on 3 idot -> more tools -> developer tool
+
+
+Locators
+1. CSS Locators
+2. XPath
+3. Playwright inbuilt locators
+
+css:
+Basic Loactor:
+1.id
+2.class
+3.name
+4.text
+
+<input class="inputLogin" type="text" id="username" name="USERNAME" size="50">
+
+<label for="username">Username</label>
+
+tag name-> input, label
+
+class,type,id,name,size -> attributeName
+
+"inputLogin","text","username","USERNAME" -> attributeValue
+
+black color text-Username -> text
+
+id-unique value
+name - name of the attribute
+class -
+
+<input class="inputLogin" type="text" id="username" name="USERNAME" size="50">
+
+
+CSS : Cascading Style sheets
+id attribute
+1. #attributeValue -> #username
+2. [id='username']
+3. tagname[attributeName='attributeValue'] -> input[id='username']
+
+name attribute:
+1. [name='USERNAME']
+2. tagname[attributeName='attributeValue'] -> input[name='USERNAME']
+
+class attribute:
+1. .attributeValue -> .decorativeSubmit
+2. [class='decorativeSubmit']
+3. tagname[attributeName='attributeValue'] -> input[class='decorativeSubmit']
+
+.input r4 wide mb16 mt8 username -> it wll not work
+.input.r4.wide.mb16.mt8.username -> it will work
+
+.nav-input nav-progressive-attribute
+.nav-input.nav-progressive-attribute
+
+text value: link-> a
+text='textvalue' -> `text='CRM/SFA'`
+
+
+classRoom:
+load url : https://login.salesforce.com/?locale=in
+username : dilipkumar.rajendran@testleaf.com
+password : TestLeaf@2025
+click on login button
+wait(12000)
+gettitle of page 
+click on applauncher or 9 dot icon
+
+{
+      name: 'chromium',
+  
+      use: { channel:'chrome'
+      ,
+       viewport:null,
+      launchOptions:{
+         args: 
+      ['--start-maximized'],}
+      },
+      
+
+    }
+
+
+
+channel: 'msedge',
+    headless: false,
+    args: [
+      '--start-maximized',]
+
+
+
+
+Dropdown:
+1. select tag dropdown
+<select>
+<option>
+
+await page.selectOption()
+label --> visible text
+value --> value attribute
+index --> index of the option (0,1,2,3...)
+
+
+2. Non Select tag dropdown
+<li>
+<ul>
+
+-> normal click-> click()
+await page.locator().click()
+
+
+
+
+
+ClassRoom:
+Use PageFixture
+Url:https://www.telerik.com/contact
+1st dropdown -> index
+2nd dropdown -> value
+3rd dropdown -> label
