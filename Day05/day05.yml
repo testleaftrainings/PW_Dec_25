@@ -1,0 +1,60 @@
+week3 day1
+
+-> Xpath
+-> Breakout +Break
+-> Advance XPath
+-> Break
+-> Playwright Locators
+
+
+Xpath:
+Attribute based xpath:
+//tagName[@attributeName='atrributevalue']
+
+//input[@id='email']
+
+Text Based xpath:
+//tagName[text()='text value']
+//span[text()='phones']
+
+partial Attribute based xpath:
+//tagName[contains(@id,'value')]
+//input[contains(@id,'input')]
+
+partial text based xpath:
+//tagname[contains(text(),'value')]
+
+collection or index based xpath
+(//tagname[@attribute='atrributevalue'])[index value]
+index value -> start from 1 and it should not go beyond 5
+(//span[@class='a-price-whole'])[2]
+
+
+
+ClassRoom:
+load the url : https://www.amazon.in/
+1. Locate the search box using attribute based xpath -> Iphone
+2. Click on storage -> 512 GB and above
+3. Click on add to cart button
+
+
+
+
+
+
+Elder to younger sibling
+//label[text()='Search Amazon.in']/following-sibling::input
+
+Elder to younger cousin
+//div[@id='username_container']/following::input
+
+
+Playwright Locators:
+
+-> getByRole  - text,button,checkbox,link,radio,heading
+-> getByLabel -
+-> getByText -
+-> getByPlaceholder -
+-> getByAltText - img
+-> getByDataTestId
+-> getByTitle
