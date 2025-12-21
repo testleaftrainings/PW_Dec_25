@@ -1,0 +1,121 @@
+week3.day2
+
+-> Assertions
+-> Arrays
+-> Breakout + Break
+-> TypeScript
+-> Breakout
+
+Playwright-> timeout -> 30sec
+
+Playwright Assertions:
+default time sec for Assertions -> 5000ms(5s)
+Types:
+1.Auto Retry 
+2.Non-Retry
+3.soft
+4.hard
+
+Assertions tpes:
+Generic Type- toEqual, toHaveTitle
+Locator Type -tobeEnabled
+page type - toHaveURL
+API Assertions
+Negating Assertions
+expect().not.
+
+-> expect()
+
+Arrays:
+
+
+
+    Array --> collection of elements
+
+    store all the pdtname
+    all the price
+    collection of similar elements-->java
+    string -->"","",""
+    number-->15,01,12
+
+    js -->stores multiple elements of different datatype
+       -->array size is dynamic
+
+
+
+       let array=[23,45,65,78,23,90]
+
+       for(i=0;...){
+         for(j=i+1){
+            if(arr[i]==arr[j])
+            {
+               print the data
+            }
+         }
+       }
+
+
+classRoom:
+
+1. PrintDuplicate [56,78,90,23,90,76,43,56]
+2. data ["chrome",true,132.8]
+add index 5 -> webkit
+pop->
+use push -> firefox
+use shift ->
+use for..of to print value
+
+
+
+
+
+
+
+
+
+Java Script:
+* Lossely
+* Dynamic Typing
+var txt=200
+txt='dilip'
+*Light Weight
+*Runtime Exception
+*Proto Type
+
+Type Script: 
+TS -> Superset of JS
+* Static Typing -> type safety
+let name:string
+name="dilip" acpt
+name=34 not acpt
+*Heavy Weight
+let name:string
+*Compile time Exception
+
+install TS:
+*Globally 
+npm install -g typescript 
+=============================================
+*Locally
+npm install typescript __save-dev
+=============================================
+check version
+-> tsc --version or tsc -v
+===============================================
+save the file  javascript -> .js
+
+save the file typescript -> .ts
+===============================================
+convert your ts code to js code
+cmd -> tsc filename.ts (file convert as .js)
+
+it covert into js code
+
+cmd -> node filename.js(output)
+=================================================
+
+execute code from .ts
+npm install -g typescript ts-node
+
+ts-node filename.ts
+===================================================
