@@ -1,0 +1,77 @@
+day 07
+
+Week4.day1
+
+-> Type Script
+-> Alert
+-> Break + Breakout
+-> Frame
+-> Breakout
+
+
+Union & Intersection Types in TypeScript:
+
+Union -> OR
+Intersection -> AND
+
+let status=string|number 
+status=200
+status="created"
+
+
+
+Arrays:
+1. PrintDuplicate [56,78,90,23,90,76,43,56]
+2. data ["chrome",true,132.8]
+add index 5 -> webkit
+use push -> firefox
+use shift
+use for..of to print value
+
+
+
+
+
+Alert:
+Popup message
+Error Message
+Warning Message
+
+*We cannot ingore alert
+
+Modal alert:
+simple alert -> can only one action OK
+confirmation alert -> two action (OK, Cancel)
+prompt alert -> input box, (OK, Cancel)
+
+
+
+Page.once 
+  url :https://www.leafground.com/alert.xhtml
+
+  get the type and message
+   click on Show button in prompt alert
+  accept("Dilip")
+  accept()
+  click on Show button in confirm alert
+  accept
+ 
+
+Frame:
+DOM inside another DOM
+iframe-> inLine Frame
+
+two types of frame 
+-> one frame
+-> nested frame
+
+we can able handle with 3 ways
+-> index based
+-> FrameLocator
+-> FrameObject
+
+
+
+ClassRoom 2:
+https://www.leafground.com/frame.xhtml
+handle frame with FrameLocator and FrameObject for nested frame
