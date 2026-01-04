@@ -1,0 +1,198 @@
+week5 day2
+
+-> Playwright Test Runner
+-> Break + Breakout
+-> Hooks
+-> Codegen
+-> Breakout
+-> GeoLocation
+
+
+
+
+Test Annotation: configure the Behaviour of the test
+test.only -> run the test which marked as only
+test.skip -> test will not run
+test.fail -> Mark test as expected to fail
+test.fixme -> mark test as not ready yet
+test.use -> override context 
+test.info -> it shows additional information about test
+test.slow()-> Slow down execution time
+test.describe -> group your test
+test.describe.parallel -> run tests in parallel
+test.describe.serial -> run tests in serial -> depend on each other
+test.describe.default -> run tests in sequential order
+
+
+Hooks
+Overview
+Hooks are special methods in Playwright that are used to set up 
+and tear down test environments.
+Types of Hooks
+beforeAll: Runs once before all tests in a file.
+afterAll: Runs once after all tests in a file.
+beforeEach: Runs before each test.
+afterEach: Runs after each test.
+Use Cases
+Setup/Teardown: Use hooks to initialize and clean up resources (e.g., launching browsers, closing databases).
+Data Preparation: Use hooks to prepare test data or reset application state before each test.
+
+
+1️⃣ beforeAll Hook
+Purpose
+
+Runs once before all tests in a file.
+
+Use cases
+
+Launch browser
+
+Create shared test data
+
+Login once for all tests
+
+Example
+test.beforeAll(async () => {
+  console.log('Runs once before all tests');
+});
+
+2️⃣ afterAll Hook
+Purpose
+
+Runs once after all tests finish.
+
+Use cases
+
+Close browser
+
+Cleanup database
+
+Remove temp files
+
+Example
+test.afterAll(async () => {
+  console.log('Runs once after all tests');
+});
+
+3️⃣ beforeEach Hook (Most Used)
+Purpose
+
+Runs before every test
+
+Use cases
+
+Navigate to page
+
+Reset state
+
+Login before each test
+
+Example
+test.beforeEach(async ({ page }) => {
+  await page.goto('https://example.com/login');
+});
+
+4️⃣ afterEach Hook
+Purpose
+
+Runs after every test
+
+Use cases
+
+Take screenshots on failure
+
+Clear cookies
+
+Logout
+
+Example
+test.afterEach(async ({ page }) => {
+  await page.context().clearCookies();
+});
+
+Full Example Using All Hooks
+import { test, expect } from '@playwright/test';
+
+test.beforeAll(async () => {
+  console.log('Before all tests');
+});
+
+test.afterAll(async () => {
+  console.log('After all tests');
+});
+
+test.beforeEach(async ({ page }) => {
+  await page.goto('https://example.com');
+});
+
+test.afterEach(async ({ page }) => {
+  console.log('Test finished');
+});
+
+test('Home page title', async ({ page }) => {
+  await expect(page).toHaveTitle(/Example/);
+});
+=============================================================================
+What is Codegen in Playwright?
+
+Playwright Codegen is a built-in tool that records your browser actions (clicks, typing, navigation) 
+and automatically generates Playwright code for you.
+
+Think of it as:
+
+🎥 Record what you do in the browser → Get ready-to-use automation code
+
+It is extremely useful for:
+
+Learning Playwright
+
+Quickly creating selectors
+
+Prototyping automation scripts
+
+Avoiding manual selector guessing
+
+Why Use Codegen? (Notes)
+✅ Advantages
+
+Auto-generates reliable selectors
+
+Saves time for beginners
+
+Great for UI automation
+
+Helps understand Playwright APIs
+
+⚠️ Limitations
+
+Generated code may need cleanup
+
+Not ideal for large test suites without refactoring
+
+Logic (loops, conditions) must be added manually
+
+👉 Best practice:
+Use Codegen to start, then refactor the code.
+
+How Codegen Works (Flow)
+
+Start codegen command
+
+A browser opens
+
+You interact with the website
+
+Playwright records actions
+
+Code is generated in real time
+
+Running Playwright Codegen
+Basic command
+npx playwright codegen https://example.com
+
+===========================================
+Purpose of geolocation :
+1. Simulating geolocation data for location-based testing.
+2. Testing location-restricted functionalities.
+3. Practical use cases: Testing location-restricted functionalities.
+4. Example: Testing location-restricted functionalities.
