@@ -1,0 +1,195 @@
+
+week6 day1
+
+Agenda
+--------
+ API Introduction
+ Headers 
+ Break 
+ API with Postman (CURD operation)
+ Classroom
+ Global Variables
+ Classroom
+
+ API -> Application Programming Interface
+ Backend process
+
+
+ REST API
+
+ HTTP Methods/CRUD op/Verbs
+ Authentication
+ Headers
+ Request Body
+ Response Code
+
+
+ Http Methods:
+ Post -> create a new resources
+ Get -> fetch the data
+ Put (updating)-> to replace complete information of existing resources
+ Patch(updating)-> to replace Partial value of existing resources
+ Delete -> delete the record
+
+
+ Authentication:
+ No Authentication  -> no login
+ Basic Authentication -> username & Password
+ OAuth -> Client id and client secret
+ JWT
+ API Key
+
+
+
+
+
+
+
+https://dev181504.service-now.com/
+admin
+F/*jyM6Q6pHh
+
+click all
+REST API Explorer
+
+change request 
+-> post =short_description,assigned_to
+-> get 
+-> patch ->assigned_to
+-> get and then delete
+
+
+
+ HTTP Header:
+ Content-Type -> application/json
+
+ Endpoint : 
+ https://qeaglecom-my.sharepoint.com/:p:/r/personal/ravindran_ramdas_testleaf_com/_layouts/15/Doc.aspx?sourcedoc=%7BAB1E2E5B-D18D-40FB-8158-82B364FEC8F3%7D&file=REST%20API%20Basics_ForPW.pptx&action=edit&mobileredirect=true
+
+
+
+
+
+sys_id 
+2cad6e968388721015869665eeaad3cc ->
+
+13ed225683c8721015869665eeaad343 ->
+
+
+Post-> create new resource
+uri,auth,header,req body,res body -> 201 Created
+
+Get-> Get the resource
+uri,auth,header,res body -> 200 OK
+Get request we should not give "Request Body"
+
+Patch -> Patrial update
+uri,auth,header,req body, res body -> 200 OK
+
+Delete-> Delete resource
+uri,auth,header,res body-> 204 No Content
+Delete request we should not give "Request Body"
+
+
+
+
+
+
+classRoom 1:
+https://dev354719.service-now.com/
+username: admin
+password: tj6Z5^xHfIH+
+
+
+-> click on ALL
+-> search box -> Rest API Explorer
+-> table - change request
+-> change Plan 
+(Post ({"change_plan":"we have plan data","conflict_status":"false"}),Get,Patch({"conflict_status":"true"}),Delete)
+
+parameter: 
+ url/ -> path parameter 
+ ? -> Query parameter
+
+ path parameter: 
+ Part of the url -> specific resources ->mandatory
+
+
+https://dev181504.service-now.com/
+https://dev181504.service-now.com/api/now/table/change_request?
+
+
+ query parameter: 
+ sent after the ? in the url 
+ used to filter,search,sorting data
+ optional
+ https://qeaglecom-my.sharepoint.com/:p:/r/personal/ravindran_ramdas_testleaf_com/_layouts/15/Doc.aspx?sourcedoc=%7BAB1E2E5B-D18D-40FB-8158-82B364FEC8F3%7D&file=REST%20API%20Basics_ForPW.pptx&action=edit&mobileredirect=true
+
+
+ form:
+ {
+ "username":"dilip@testleaf.com"
+ }
+
+
+ Status code:
+ 200,201,204,400,404,403,500,401
+ 401 and 403 
+ 400 and 493
+ 403 and 403
+
+Post:
+We have request body
+201 /200 -> resources successfully Created 
+
+Get:
+200 -> OK
+No need having request body
+
+Put/Patch:
+200 -> OK
+we have request body
+
+Delete:
+No need having Request body
+204 -> No content
+
+400-bad request
+401-unauthorized
+402-payment required
+403-forbidden
+404-not found
+401 & 403
+-> unauthorized -> cannot enter in to  office
+-> forbidden -> you able enter into the office -> access server room(NO)
+
+
+500-internal server error
+502-Bad gateway
+503-services unavailable
+
+ClassRoom 1
+
+url: https://dev277770.service-now.com/
+username:admin
+Password:1io7Xr@hSN$S
+
+Endpoint: https://dev277770.service-now.com/api/now/table/{tableName}
+tableName=change request
+{"short_description":""}
+Post, Get,Patch,Delete
+
+
+Variables:
+1.Gobal level Variables ->  access variable inside all Collections
+2.Collection level Variables -> access variable inside one collection
+3.Environment level Variables -> QA, DEV, PROD
+
+Path and Query parameter:
+Path parameter -> Identifies a specific record (url/./././)
+https://dev277770.service-now.com/api/now/table/incident/{{sys_id}}
+
+
+Query parameter:(?)
+filter, sort,limit response 
+(Url/path?sysparm_fields=number
