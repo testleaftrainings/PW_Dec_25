@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "cceae625-5ad5-4327-bd95-0ae9225a91e9",
+		"name": "PW_DEC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "51398020",
+		"_collection_link": "https://dilipkumaar1998-7482671.postman.co/workspace/Dilip's-Workspace~84447988-5e00-4225-8d85-e2a3e562b17f/collection/51398020-cceae625-5ad5-4327-bd95-0ae9225a91e9?action=share&source=collection_link&creator=51398020"
+	},
+	"item": [
+		{
+			"name": "CreateIncident",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"var response=pm.response.json()\r",
+							"var sys=response.result.sys_id\r",
+							"console.log(sys)\r",
+							"\r",
+							"//pm.globals.set(\"Sys_id\",sys)\r",
+							"\r",
+							"//pm.collectionVariables.set(\"Coll_Sys_id\",sys)\r",
+							"\r",
+							"pm.environment.set(\"Env_Sys_id\", sys)"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "F/*jyM6Q6pHh",
+						"username": "admin"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"Learn The Postman Basic in Playwright\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dev181504.service-now.com/api/now/table/incident"
+			},
+			"response": []
+		},
+		{
+			"name": "GetIncident",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "F/*jyM6Q6pHh",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://dev181504.service-now.com/api/now/table/incident/{{Env_Sys_id}}"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateIncident",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "F/*jyM6Q6pHh",
+						"username": "admin"
+					}
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_description\": \"Updated via API\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dev181504.service-now.com/api/now/table/incident/{{Env_Sys_id}}"
+			},
+			"response": []
+		},
+		{
+			"name": "QueryParam",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "F/*jyM6Q6pHh",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dev181504.service-now.com/api/now/table/incident/{{Env_Sys_id}}?sysparm_fields=business_impact%2Cincident_state",
+					"protocol": "https",
+					"host": [
+						"dev181504",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"incident",
+						"{{Env_Sys_id}}"
+					],
+					"query": [
+						{
+							"key": "sysparm_fields",
+							"value": "business_impact%2Cincident_state"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteIncident",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "F/*jyM6Q6pHh",
+						"username": "admin"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "https://dev181504.service-now.com/api/now/table/incident/{{Env_Sys_id}}"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Coll_Sys_id",
+			"value": ""
+		}
+	]
+}
