@@ -1,0 +1,302 @@
+Week7.day1
+
+09:00 to 10:00-> OOPS (class, object,Access Modifiers)
+10:00 to 10:20-> BreakoutSession
+10:20 to 10:35-> Break
+10:35 to 11:15-> Inheritance
+11:15 to 11:30-> BreakoutSession
+11:30 to 12:00-> Polymorphsim
+12:00 to 12:45-> Abstraction
+12:45 to 01:10-> Break + BreakoutSession
+
+
+
+oops with typescript
+
+Object-Oriented Programming (OOPS) is a programming paradigm that organizes code 
+using classes and objects instead of only functions.
+
+In Playwright automation, OOPS helps us design frameworks that are:
+
+* Modular
+* Reusable
+* Maintainable
+* Scalable
+
+Instead of writing automation code in one file, 
+we divide responsibilities into logical classes such as 
+Page Objects, utilities, and test classes.
+
+Class:
+
+A Class is like a template or buleprint that defines properties and methods 
+to all object of that type.
+
+* properties let name="Dilip" 
+let name:string="Dilip"
+
+* methods -> launchBrowser(){
+}
+
+* constructor -> it will initialize the class properties and Methods 
+while cereating Object
+
+class Browser{
+
+//properties
+empName:string="Dilip"
+
+//method
+browserDetails(){
+
+}
+
+//constructor -  two types
+1. Default -> constructor(){
+}
+
+2. parameter -> constructor(user:string){
+this.empName=user
+}
+
+this-> will reffer the current class properties and methods
+
+constructor:
+1. Default -> constructor()
+2. paramter -> constructor(user:string,age:number)
+
+
+OOPs: 
+
+Inheritance:
+its a relationship between two class
+parent class and child class
+
+types:
+Single Inheritance :  parent -> child
+Multilevel Inheritance : GrandParent -> parent -> child
+Hierarchical Inheritance : browser -> chrome ,browser -> edge , browser->firefox 
+
+ts -> it will  not support mulitple Inheritance -> PA&PB -> PC
+
+keyword: extends
+child extends parent  -> work
+
+parent extends child ->this will not work
+
+
+ClassRoom 1:
+Parent file
+ Create class Browser
+ Create 2 methods browserType,browserVersion
+
+1st Child file
+Create class Chrome 
+Create 1 method launchBrowser
+create object for Chrome
+
+2nd Child file
+Create class Edge
+Create 1 method launchBrowser
+create object for Edge
+
+
+classroom 2:
+create class Locator
+public css() -> c.l()
+
+create class Xpath -> Locator
+basicXpath()
+advanceXpath()
+
+create class PlaywrightLocators -> Locator
+getByText()
+getByRole()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Polymorphsim:
+
+-> many forms
+
+2 types Polymorphsim:
+
+1.Method overloading -> Complie poly
+2.Method overriding -> Run poly
+
+Method overloading:
+Inside the same class we can create multiple method with same Method name,but 
+different paramters should be passed
+
+class Base{
+
+Elementclick(locator:string):void -> click()
+Elementclick(locator:string,forceClick:string):void
+
+Elementclick(locator:string){
+
+}
+
+Elementclick(locator:string,forceClick:string){
+
+}
+
+Elementclick(locator:string,forceClick?:string){
+}
+
+
+Method overriding:
+use Method overriding -> Inheritance
+connect between two different class with same method signature and paramters only 
+implemenation can change
+
+export class parent{
+
+phone(){
+console.log(iphone 15)
+}
+}
+//object-> iphone 15
+
+class child extends parent{
+
+phone(){
+console.log(iphone 16 pro)
+}
+}
+//object-> iphone 16 pro
+
+
+ClassRoom
+Create File  1
+2 properties
+2 methods(public , private)
+1 constructor()
+
+create Object -> executed code
+
+create file 2
+create object for this file 1
+
+Polymorphsim:
+
+-> many forms
+
+2 types Polymorphsim:
+
+1.Method overloading -> Complie poly
+2.Method overriding -> Run poly
+
+Method overloading:
+Inside the same class we can create multiple method with same Method name,but 
+different paramters should be passed
+
+class Base{
+
+Elementclick(locator:string):void
+Elementclick(locator:string,forceCick:boolean):void
+
+//implemenation
+Elementclick(locator:string,forceCick?:boolean){
+if(forcceCick==true){ 
+console.log(click with force)}
+else{
+console.log(click normally)}
+}
+
+}
+Elementclick("#id") ->normal
+
+Elementclick("#id",true) ->force
+
+
+Method overriding:
+use Method overriding -> Inheritance
+connect between two different class with same method signature and paramters only 
+implemenation can change
+
+export class parent{
+
+phone(){
+console.log(button phone)
+}
+}
+//object-> button phone
+
+class child extends parent{
+
+phone(){
+console.log(iphone)
+}
+}
+//object child -> iphone 
+
+
+ClassRoom3:
+MethodOverLoading:
+create Class Method
+methods -> fill(locator:string):void
+fill(locator:string,text:string):void
+==============================================
+MethodOverRiding:
+create class Locator
+public css() -> c.l()
+
+create class Xpath -> Locator
+basicXpath()
+advanceXpath()
+css() -> override
+
+create Object for Xpath and call css method
+
+
+
+Abstraction:
+Process of hiding implementation deatils and showing only the essential features
+
+1.Abstract Class
+2.Interface 
+
+Abstract class -> 0 to 100 % Abstract method
+it have both implementation and unimplementation
+
+launch(){ 
+//implementation method
+}
+
+loadUrl():void //unimplementation
+
+
+Interface:
+100% Abstract method
+
+username():void
+password():void
+
+
+ClassRoom 1:
+Method overloading
+enterText(locator:string):void
+enterText(locator:string,text:string):void
+
+Abstract class:
+Abstract class -> 
+typeAndClick(){
+//implementation
+}
+abstract enterText():void
+abstract click():void
+
