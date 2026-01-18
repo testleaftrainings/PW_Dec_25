@@ -1,0 +1,244 @@
+week7.day2
+-> Abstraction
+-> Break + BreakoutSession
+-> Custom Fixture
+-> Page Object Model
+-> Breakout
+
+
+Abstraction:
+Process of hiding implementation deatils and showing only the essential features
+
+1.Abstract Class
+2.Interface 
+
+Abstract class -> 0 to 100 % Abstract method
+it have both implementation and unimplementation
+
+launch(){ 
+//implementation method
+}
+
+loadUrl():void //unimplementation
+
+
+Interface:
+100% Abstract method
+
+username():void
+password():void
+
+
+ClassRoom 1:
+Method overloading
+enterText(locator:string):void
+enterText(locator:string,text:string):void
+
+Abstract class:
+Abstract class -> 
+typeAndClick(){
+//implementation
+}
+abstract enterText():void
+abstract click():void
+
+create normal Class -> extends abstract class
+create Object normal class
+call the methods
+
+
+
+
+
+
+
+
+
+
+============================
+Fixture:
+
+{page}-> page Fixture -> browser -> context -> page
+await page.goto("url")
+{context} -> context Fixture
+-> can be shared testacross multiple tests
+-> setup -> use in test -> teardown
+{request} -> API testing
+
+Custom Fixture:
+user defined fixture
+testfile using test.extend[]
+
+
+const br=await chromium.launch()
+const cont= await br.newContext()
+const page= await cont.newPage()  
+await page.goto("url")
+
+test("login",async({page})=>{
+await page.goto("url")
+})
+
+steps:
+
+1 importing Playwright Test
+
+import { test as base } from '@playwright/test';
+
+test is imported from Playwright
+
+It is renamed to base
+
+Why? 👉 So we can extend it and create our own custom test setup (fixtures)
+
+
+
+---
+
+2️⃣ Creating a Custom Fixture
+
+test("title",async({page})=>{
+})
+
+
+cfixture("Title",async({login})=>{
+})
+
+export const cfixture = base.extend<{ login: any }>({
+
+base.extend() is used to add new fixtures
+
+Here, you are creating a fixture named login
+
+{ login: any }
+→ Type definition (TypeScript) saying:
+
+> This fixture will expose login, and its type is any
+
+
+
+
+📌 Best practice: Instead of any, we usually use Page
+
+
+---
+
+3️⃣ Defining the login Fixture
+
+login: async ({ page }, use) => {
+
+page → Built-in Playwright fixture (browser page)
+
+use → A callback to expose the fixture value to tests
+
+
+Think of use() as:
+
+> “Make this value available to the test”
+
+---
+
+4️⃣ Login Steps (Setup Part)
+
+await page.goto("https://login.salesforce.com/?locale=in")
+await page.fill("#username","dilipkumar.rajendran@testleaf.com")
+await page.fill("#password","TestLeaf@2025")
+await page.click("#Login")
+
+This is the precondition:
+
+Open Salesforce login page
+
+Enter username
+
+Enter password
+
+Click Login
+
+
+📌 This runs before the test starts
+
+test("Title",async({page})=>{
+})
+---
+
+5️⃣ Exposing the Page to the Test
+
+await use(page)
+
+This hands over the logged-in page to the test
+
+Any test using login will receive: ✅ An already logged-in Salesforce session
+
+
+Design Pattern:
+POM -> Page Object Model
+based on the webpage 
+
+LoginPage:
+*username
+*password
+*clickonLogin
+
+WelcomePage:
+*Click on crmsfa
+*Logout
+
+MyHomePage:
+*Leads
+*Accounts
+*Cases
+
+MyLeadsPage:
+*CreateLead -click 
+
+
+CreateLead:
+*Cname
+*Fname
+*Lname
+
+ViewLead:
+*verify 
+
+MyAccountPage:
+*CreateAccount
+
+AccountsPage:
+*AccountName
+
+POM:
+*Organizing the code
+*Improved Readability
+*Easy Maintenances
+*Increased Prod
+* Reusability
+
+LoadUrl(){
+url
+}
+
+enteruserdetails(){
+username
+password
+}
+
+
+clickOnLogin(){
+
+}
+
+POM:
+
+pages -> .ts file
+execution -> .spec.ts file
+
+
+classroom:
+-> Leads.ts,CreateLead.ts,ViewLead.ts
+
+-> Leads.ts -> click on createLead button ,click Find Leads
+->CreateLead.ts -> companyname, firstname,lastname
+-> ViewLead -> verify lead is created 
+
+spec.ts -> create object for ViewLead
